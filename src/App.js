@@ -1,20 +1,18 @@
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from './components/Home/NavBar';
-import { Footer } from './components/Home/Footer';
-import { Banner } from './components/Home/Banner';
-import { Projects } from './components/Home/Projects';
-import Visualize from './components/Visualize';
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
+import Home from "./components/pages/Home";
+import Visualize from "./components/sorting/Visualize";
+
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <Banner />
-      <Projects />
-      <Visualize />
-      <Footer />
-    </div>
+      <Router className="App">
+            <Switch>
+              <Route path='/sorting' component={Visualize}/>
+              <Route path='/' component={Home}/>
+            </Switch>
+      </Router>             
   );
 }
 
