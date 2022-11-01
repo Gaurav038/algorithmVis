@@ -29,7 +29,7 @@ export default function Navbar(props) {
   };
 
   return (
-    <div className="navbar" id="navbar">
+    <div className="navbar" id="navbar" style={{justifyContent: 'center'}}>
       <button id="random" onClick={() => props.newList(1)}>
         Random
       </button>

@@ -12,6 +12,7 @@ export const Projects = () => {
       title: "Business Startup",
       description: "Design & Development",
       imgUrl: projImg1,
+      urlLink: '/sorting'
     },
     {
       title: "Business Startup",

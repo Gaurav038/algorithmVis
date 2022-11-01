@@ -24,6 +24,9 @@ import {
   DONE,
 } from "./helper/constants";
 import { getKeysCopy } from "./helper/keys.js";
+import { Link } from "react-router-dom";
+import {BsFillArrowLeftCircleFill} from "react-icons/bs"
+
 
 function Visualize() {
   const [list, setList] = useState([]);
@@ -200,6 +203,8 @@ function Visualize() {
 
   return (
     <>
+      <h1 className="title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Sorting Algorithms</h1>
+
       <Navbar
         start={start}
         response={response}
