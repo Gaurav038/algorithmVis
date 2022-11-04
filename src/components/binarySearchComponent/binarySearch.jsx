@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import EntryPoint from "./entryPoint";
 import Search from "./search";
-import Navbar from "./navbar";
+import { useState } from 'react';
 
 function BinarySearch (){
 
@@ -37,7 +37,6 @@ function BinarySearch (){
 
         return (
             <div>
-                <Navbar/>
                 <br />
                 <br />
                 <br />

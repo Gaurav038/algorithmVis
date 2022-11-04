@@ -1,47 +1,46 @@
 import React, {Component} from 'react';
 import TextField from '@material-ui/core/TextField';
+import { useState } from 'react';
 
 
-class EntryPoint extends Component {
-    state={
-        error:false
+function EntryPoint({ startGame, upper, setUpper}){
+
+    console.log(startGame, upper, setUpper,"----------------")
+    const [error, setError] = useState(false)
+    
+    const getData = (e)=>{
+        if( e.target.value!== "" ){
+            console.log(e.target.value);
+            setUpper(e.target.value);
+        }
+        else{
+            setUpper(100)
+        }
     }
-    render() {
+
         return (
             <div>
                 <TextField
-                    error={this.state.error}
+                    error={error}
                     id="standard-error-helper-text"
                     label="Upper Number"
                     type="number"
                     variant="outlined"
-                    onChange={this.getData}
+                    onChange={(e)=>getData(e)}
                 /> <br /><br />
                 <h1>
-                    Guess a number between 0 and {this.props.upper}
+                    Guess a number between 0 and {upper}
                 </h1>
                 <br />
                 <button
                     className='btn btn-warning btn-lg'
-                    onClick={this.props.startGame}
+                    onClick={()=>startGame()}
                 >
                     Start the game
                 </button>
             </div>
         );
-    }
-    getData = (e)=>{
-        if( e.target.value!== "" ){
-            console.log(e.target.value);
-            this.props.setUpper(e.target.value);
-        }
-        else{
-            this.props.setUpper(100)
-        }
-    }
-    validateNumbers = () =>{
-
-    }
+    
 }
 
 export default EntryPoint;

@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import TextField from '@material-ui/core/TextField';
-class TextFields extends Component {
-    state={
-        error:false
-    }
-    render() {
+import { useState } from 'react';
+
+
+function TextFields() {
+    const [error, setError] = useState(false);
+
         return (
             <div>
                 <TextField
-                    error={this.state.error}
+                    error={error}
                     id="standard-error-helper-text"
                     label="Upper Number"
                     type="number"
@@ -18,7 +19,5 @@ class TextFields extends Component {
             </div>
         );
     }
-
-}
 
 export default TextFields;

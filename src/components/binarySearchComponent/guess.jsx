@@ -1,8 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import RangeSlider from "./doubleSlider";
 
-class Guess extends Component {
-    render() {
+function Guess({yesButton, noButton, upper, lower, max}) {
+
+        const getMid = () => {
+            const mid = Math.floor( (upper+lower)/2);
+            return mid;
+        }
+
         return (
             <div >
 
@@ -17,32 +22,28 @@ class Guess extends Component {
                     <div className="card card-body">
                         <center style={{justifyContent:"center"}}>
                             <RangeSlider
-                                upper={this.props.upper}
-                                lower={this.props.lower}
-                                max={this.props.max}
+                                upper={upper}
+                                lower={lower}
+                                max={max}
                             />
                         </center>
                     </div>
                 </div>
 
                <h1>
-                    Is you number greater than {this.getMid()}?
+                    Is you number greater than {()=>getMid()}?
                 </h1> <br />
                 <button
                     className='btn btn-lg btn-success m-2'
-                    onClick={this.props.yesButton}
+                    onClick={yesButton}
                 >Yes</button>
                 <button
                     className='btn btn-lg btn-danger m-2'
-                    onClick={this.props.noButton}
+                    onClick={noButton}
                 >No</button> <br/>
             </div>
         );
-    }
-    getMid = () => {
-        const mid = Math.floor( (this.props.upper+this.props.lower)/2);
-        return mid;
-    }
+    
 }
 
 export default Guess;
