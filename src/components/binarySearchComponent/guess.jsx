@@ -3,13 +3,16 @@ import RangeSlider from "./doubleSlider";
 
 function Guess({yesButton, noButton, upper, lower, max}) {
 
+    console.log(upper, lower,"----------------")
+
         const getMid = () => {
             const mid = Math.floor( (upper+lower)/2);
+            console.log(mid,"----------------")
             return mid;
         }
 
-        return (
-            <div >
+        return(
+            <div>
 
                 <p>
 
@@ -18,7 +21,7 @@ function Guess({yesButton, noButton, upper, lower, max}) {
                         Toggle Range
                     </button>
                 </p>
-                <div className="collapse" id="collapseExample">
+                {/* <div className="collapse" id="collapseExample">
                     <div className="card card-body">
                         <center style={{justifyContent:"center"}}>
                             <RangeSlider
@@ -28,10 +31,10 @@ function Guess({yesButton, noButton, upper, lower, max}) {
                             />
                         </center>
                     </div>
-                </div>
+                </div> */}
 
                <h1>
-                    Is you number greater than {()=>getMid()}?
+                    Is you number greater than {getMid}?
                 </h1> <br />
                 <button
                     className='btn btn-lg btn-success m-2'

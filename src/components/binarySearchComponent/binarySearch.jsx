@@ -3,7 +3,7 @@ import EntryPoint from "./entryPoint";
 import Search from "./search";
 import { useState } from 'react';
 
-function BinarySearch (){
+export default function BinarySearch (){
 
     const [upper, setUpper] = useState(100);
     const [lower, setLower] = useState(0);
@@ -62,4 +62,3 @@ function BinarySearch (){
         );
 }
 
-export default BinarySearch;

@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 function EntryPoint({ startGame, upper, setUpper}){
 
-    console.log(startGame, upper, setUpper,"----------------")
     const [error, setError] = useState(false)
     
     const getData = (e)=>{

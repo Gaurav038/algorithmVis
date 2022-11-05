@@ -47,6 +47,7 @@ export default function RangeSlider(props) {
     useEffect(()=>{
         setValue([props.lower,props.upper]);
     },[props.lower,props.upper])
+    
     return (
         <div className={classes.root}>
             <CSlider
