@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import './cell.css';
 
-function Cell() {
+function Cell(props) {
 
     const getClass = () =>{
-        const { val, isVisiting,isChecking,isPrime} = this.props.cell;
+        const { val, isVisiting,isChecking,isPrime} = props.cell;
         if(isPrime){
             return "cell cell-prime bg-success text-light m-2";
         }else if( isVisiting ){
@@ -19,7 +19,7 @@ function Cell() {
         return (
             <div className={getClass}>
                 <span >
-                    {this.props.cell.val}
+                    {props.cell.val}
                 </span>
             </div>
         );

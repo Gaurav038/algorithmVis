@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import Cell from "./cell";
 import './cells.css'
-class Cells extends Component {
 
-    render() {
+function Cells(props){
+
         return (
             <div className="Cells">
-                {this.props.cells.map( (cell,cellidx)=>{
+                {props.cells.map( (cell,cellidx)=>{
                     return (
                         <Cell
                             key={cellidx}
@@ -16,7 +16,7 @@ class Cells extends Component {
                 } )}
             </div>
         );
-    }
+
 }
 
 export default Cells;
