@@ -2,7 +2,7 @@ import React from 'react';
 import Cells from "./cells";
 import DiscreteSlider from "./slider";
 import Menu from "./menu";
-import {seive} from "../algorithms/prime";
+import {seive} from "./prime";
 import Spiral from "./spiral";
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -158,9 +158,9 @@ function Seive() {
        // },counter*speed);
     }
         useEffect(() => {
-            const cells = getCells(this.state.number);
-            this.setState({cells});
-        })
+            const cells = getCells(number);
+            setCells(cells)
+        },[number])
 
         return (
             <div>

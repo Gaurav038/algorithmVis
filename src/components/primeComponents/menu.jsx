@@ -5,7 +5,7 @@ import SimpleSelect from "./simpleSelect";
 function Menu(props){
 
     const isClickable = () =>{
-        if( this.props.isDisabled ){
+        if(props.isDisabled ){
             return {cursor: "not-allowed"};
         } else{
             return {};

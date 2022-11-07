@@ -17,7 +17,7 @@ function Cell(props) {
     }
 
         return (
-            <div className={getClass}>
+            <div className={getClass()}>
                 <span >
                     {props.cell.val}
                 </span>

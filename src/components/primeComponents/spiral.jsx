@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import Cell from "./cell";
 
-class Spiral extends Component {
+function Spiral (){
 
-    render() {
         let Maxwidth = window.innerWidth;
         let MaxHeight = window.innerHeight;
 
@@ -42,6 +41,5 @@ class Spiral extends Component {
             </div>
         );
     }
-}
 
 export default Spiral;
