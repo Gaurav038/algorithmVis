@@ -6,7 +6,6 @@ import { selectionSort } from "./algorithms/selectionSort.js";
 import { mergeSort } from "./algorithms/mergeSort.js";
 import { quickSort } from "./algorithms/quickSort.js";
 import { heapSort } from "./algorithms/heapSort.js";
-import { twistSort } from "./algorithms/twistSort.js";
 
 // components
 import Navbar from "./Navbar";
@@ -26,6 +25,7 @@ import {
 import { getKeysCopy } from "./helper/keys.js";
 import { Link } from "react-router-dom";
 import {BsFillArrowLeftCircleFill} from "react-icons/bs"
+import "../../App.css"
 
 
 function Visualize() {
@@ -93,9 +93,6 @@ function Visualize() {
     }
     if (Name === 6) {
       moves = await heapSort(array, array.length);
-    }
-    if (Name === 7) {
-      moves = await twistSort(array, array.length);
     }
     return moves;
   };

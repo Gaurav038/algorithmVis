@@ -13,7 +13,6 @@ export default function Navbar(props) {
     { value: 4, type: "Merge Sort" },
     { value: 5, type: "Quick Sort" },
     { value: 6, type: "Heap Sort" },
-    { value: 7, type: "Twist Sort" },
   ]);
 
   const [lengths, setlengths] = useState([

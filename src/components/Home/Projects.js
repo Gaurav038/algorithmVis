@@ -1,7 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../../assets/img/project-img1.png";
-import colorSharp2 from "../../assets/img/color-sharp2.png";
+import projImg1 from "../../assets/img/projImg1.png";
+import projImg2 from "../../assets/img/projImg2.png";
+import projImg3 from "../../assets/img/projImg3.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -9,36 +10,28 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Sorting Algorithm",
+      description: "A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements",
       imgUrl: projImg1,
       urlLink: '/sorting'
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Binary Search",
+      description: "Binary Search is a searching algorithm for finding an element's position in a sorted array.",
+      imgUrl: projImg2,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
+      title: "Sieve Algorithm",
+      description: "The sieve of Eratosthenes is one of the most efficient ways to find all primes smaller than n when n is smaller than 10 million or so.",
+      imgUrl: projImg3,
     },
     {
-      title: "Business Startup",
-      description: "Design & Development",
+      title: "Sorting Algorithm",
+      description: "A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements",
       imgUrl: projImg1,
+      urlLink: '/sorting'
     },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
-    {
-      title: "Business Startup",
-      description: "Design & Development",
-      imgUrl: projImg1,
-    },
+  
   ];
 
   return (
@@ -49,8 +42,8 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <h2>Algorithm Visualizer</h2>
+                <p>Algorithm Visualizer is an interactive online platform that Visualising algorithms through animation</p>
                   <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <div eventKey="first">
                       <Row>
@@ -72,7 +65,6 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
     </section>
   )
 }
