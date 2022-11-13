@@ -199,7 +199,7 @@ function Visualize() {
   };
 
   return (
-    <>
+    <div className="visualize">
       <h1 className="title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Sorting Algorithms</h1>
 
       <Navbar
@@ -209,7 +209,7 @@ function Visualize() {
         onChange={onChange}
       />
       <Frame list={list} />
-    </>
+    </div>
   );
 }
 

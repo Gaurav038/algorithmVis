@@ -15,11 +15,6 @@ function Guess({yesButton, noButton, upper, lower, max}) {
             <div>
 
                 <p>
-
-                    <button className="btn btn-secondary btn-lg" type="button" data-toggle="collapse"
-                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                        Toggle Range
-                    </button>
                 </p>
                 <div className="collapse" id="collapseExample">
                     <div className="card card-body">

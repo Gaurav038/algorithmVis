@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import EntryPoint from "./entryPoint";
 import Search from "./search";
 import { useState } from 'react';
+import { Link } from "react-router-dom";
+import {BsFillArrowLeftCircleFill} from "react-icons/bs"
 
 export default function BinarySearch (){
 
@@ -37,6 +39,8 @@ export default function BinarySearch (){
 
         return (
             <div>
+            <h1 className="black_title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Binary Search</h1>
+
                 <br />
                 <br />
                 <br />

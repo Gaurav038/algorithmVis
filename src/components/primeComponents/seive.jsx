@@ -1,9 +1,9 @@
 import React from 'react';
 import Cells from "./cells";
-import DiscreteSlider from "./slider";
+import { Link } from "react-router-dom";
+import {BsFillArrowLeftCircleFill} from "react-icons/bs";
 import Menu from "./menu";
 import {seive} from "./prime";
-import Spiral from "./spiral";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -164,6 +164,8 @@ function Seive() {
 
         return (
             <div>
+                <h1 className="black_title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Seive Algorithms</h1>
+
                 <Menu
                     onChangeSpeed={changeSpeed}
                     onChangeValues={handleValueIncease}
@@ -176,13 +178,6 @@ function Seive() {
                     <Cells
                         num={number}
                         cells={cells}
-                    />
-                }
-                {algo === 1 &&
-                    <Spiral
-                        num={number}
-                        primes={primes}
-                        maxPrime={maxPrime}
                     />
                 }
 

@@ -1,10 +1,9 @@
-// import "./App.css";
 import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from "./components/pages/Home";
 import Visualize from "./components/sorting/Visualize";
 import BinarySearch from "./components/binarySearchComponent/binarySearch";
 import Seive from './components/primeComponents/seive';
-
+import './App.css'
 
 function App() {
   return (

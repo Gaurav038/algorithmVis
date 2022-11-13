@@ -19,11 +19,13 @@ export const Projects = () => {
       title: "Binary Search",
       description: "Binary Search is a searching algorithm for finding an element's position in a sorted array.",
       imgUrl: projImg2,
+      urlLink: '/binarySearch'
     },
     {
       title: "Sieve Algorithm",
       description: "The sieve of Eratosthenes is one of the most efficient ways to find all primes smaller than n when n is smaller than 10 million or so.",
       imgUrl: projImg3,
+      urlLink: '/prime'
     },
     {
       title: "Sorting Algorithm",
@@ -42,7 +44,7 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Algorithm Visualizer</h2>
+                <h2 style={{color: 'white'}} >Algorithm Visualizer</h2>
                 <p>Algorithm Visualizer is an interactive online platform that Visualising algorithms through animation</p>
                   <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <div eventKey="first">
