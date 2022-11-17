@@ -3,6 +3,7 @@ import Home from "./components/pages/Home";
 import Visualize from "./components/sorting/Visualize";
 import BinarySearch from "./components/binarySearchComponent/binarySearch";
 import Seive from './components/primeComponents/seive';
+import Queen from './components/queenComponents/queen'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
               <Route path='/prime' component={Seive}/>
               <Route path='/binarySearch' component={BinarySearch}/>
               <Route path='/' component={Home}/>
+              <Route path='/nqueen' component={Queen}/>
             </Switch>
       </Router>             
   );
