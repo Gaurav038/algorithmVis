@@ -28,10 +28,10 @@ export const Projects = () => {
       urlLink: '/prime'
     },
     {
-      title: "Sorting Algorithm",
+      title: "N-Queen Algorithm",
       description: "A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements",
       imgUrl: projImg1,
-      urlLink: '/sorting'
+      urlLink: '/nqueen'
     },
   
   ];

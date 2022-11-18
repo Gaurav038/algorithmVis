@@ -25,7 +25,6 @@ import {
 import { getKeysCopy } from "./helper/keys.js";
 import { Link } from "react-router-dom";
 import {BsFillArrowLeftCircleFill} from "react-icons/bs"
-import "../../App.css"
 
 
 function Visualize() {

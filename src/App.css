@@ -37,7 +37,7 @@ a:hover {
   text-decoration: none;
 }
 
-img {
+.project img {
   width: 100%;
   height: 15rem !important;
 }
@@ -162,13 +162,13 @@ p.danger {
 
 
 /* FRAME STARTS */
-.array {
+.frame .array {
   padding: 1rem;
   display: flex;
   min-height: 80vh;
   align-items: flex-start;
 }
-.cell {
+.frame .cell {
   flex: 0.5;
   margin: 1px;
   display: flex;
@@ -178,12 +178,12 @@ p.danger {
   background-color: #D6D6D6;
   transition: all .4s ease-in;
 }
-.cell.done {
+.frame .cell.done {
   background-color: #9CEC5B;
   border-color: #9CEC5B;
   transition: all .4s ease-out;
 }
-.cell.current {
+.frame .cell.current {
   border-color: #6184D8;
   background-color: #6184D8;
   transition: all .4s ease-out;

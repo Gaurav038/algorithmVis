@@ -1,14 +1,13 @@
 import React, {Component} from 'react';
 import Cells from "./cells";
-import Navbar from "./navbar";
 import Menu from "./menu";
 import { useState,useEffect} from 'react';
 
 function Queen() {
-    const {board, setBoard} = useState([]);
-    const {number, setNumber} = useState(4);
-    const {speed, setSpeed} = useState(490);
-    const {isRunning, setisRunning} = useState(false);
+    const [board, setBoard] = useState([]);
+    const [number, setNumber] = useState(4);
+    const [speed, setSpeed] = useState(490);
+    const [isRunning, setisRunning] = useState(false);
 
     const handleStop =() =>{
         setisRunning(false)
@@ -27,49 +26,50 @@ function Queen() {
         const board = getBoard(number);
         setBoard(board);
     }
-    const handleTurnOff =  () => {
+    const handleTurnOff = () => {
         const newBoard = turnOffAttack(board, number);
-        this.setState({board:newBoard});
+        setBoard(newBoard);
     }
     const startAlgo = async ()=>{
-        this.setState({isRunning:true});
-        const newBoard = this.state.board.slice();
-        await this.queensAlgo(newBoard,0);
-        const newBoard2 = turnOffAttack(this.state.board,this.state.number);
-        this.setState({board:newBoard2,isRunning:false});
+        setisRunning(true)
+        const newBoard = board.slice();
+        await queensAlgo(newBoard,0);
+        const newBoard2 = turnOffAttack(board, number);
+        setBoard(newBoard2);
+        setisRunning(false);
     }
     const queensAlgo =  async (board,col) => {
 
-        if( col>=this.state.number ){
+        if( col>=number ){
             return true;
         }
 
         let newBoard = board.slice();
-        for( let i = 0; i < this.state.number;i++ ){
+        for( let i = 0; i < number;i++ ){
 
 
-            newBoard = turnOffAttack(newBoard,this.state.number);
-            const result = getChecked(newBoard,i,col,this.state.number);
+            newBoard = turnOffAttack(newBoard, number);
+            const result = getChecked(newBoard,i,col, number);
             newBoard = result[0];
 
-            this.setState({board:newBoard});
-            await sleep(this.state.speed);
+            setBoard(newBoard);
+            await sleep(speed);
             if( result[1] ){
-                const res = await this.queensAlgo(newBoard,col+1)
+                const res = await queensAlgo(newBoard,col+1)
                 if( res === true){
                     return true;
                 }
                 newBoard[i][col] = {...newBoard[i][col],isPresent:true,isCurrent:true};
-                this.setState({board:newBoard});
-                await sleep(this.state.speed);
+                setBoard(newBoard);
+                await sleep(speed);
                 newBoard[i][col] = {...newBoard[i][col],isPresent:false,isCurrent:false};
-                this.setState({board:newBoard});
+                setBoard(newBoard);
 
             }
             newBoard[i][col] = {...newBoard[i][col],isPresent:false,isCurrent:false};
-            newBoard = turnOffAttack(newBoard,this.state.number);
-            this.setState({board:newBoard});
-            await sleep(this.state.speed);
+            newBoard = turnOffAttack(newBoard, number);
+            setBoard(newBoard);
+            await sleep(speed);
         }
         return false;
     }
@@ -77,12 +77,10 @@ function Queen() {
     useEffect(() => {
       const board = getBoard(number);
       setBoard(board);
-    })
-
+    },[])
 
         return (
             <div>
-                <Navbar/>
                 <Menu
                     onSpeedChange={handleSpeedChange}
                     onCountChange={handleQueenChange}

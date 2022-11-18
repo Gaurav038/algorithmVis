@@ -13,8 +13,8 @@ function App() {
               <Route path='/sorting' component={Visualize}/>
               <Route path='/prime' component={Seive}/>
               <Route path='/binarySearch' component={BinarySearch}/>
-              <Route path='/' component={Home}/>
               <Route path='/nqueen' component={Queen}/>
+              <Route path='/' component={Home}/>
             </Switch>
       </Router>             
   );
