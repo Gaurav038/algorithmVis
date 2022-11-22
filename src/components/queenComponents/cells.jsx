@@ -4,7 +4,7 @@ import './style.css';
 class Cells extends Component {
     render() {
         return (
-            <div className='booard m-5' >
+            <div className='booard m-5 queenBoard' >
                 {this.props.board.map( (row,rowidx)=>{
                     return(
                         <div key={rowidx}>

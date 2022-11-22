@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './style.css'
 import queen from './queen.png';
+
 class Cell extends Component {
     render() {
         return (

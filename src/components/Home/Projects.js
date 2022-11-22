@@ -3,6 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../../assets/img/projImg1.png";
 import projImg2 from "../../assets/img/projImg2.png";
 import projImg3 from "../../assets/img/projImg3.png";
+import projImg4 from "../../assets/img/board.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -29,8 +30,8 @@ export const Projects = () => {
     },
     {
       title: "N-Queen Algorithm",
-      description: "A Sorting Algorithm is used to rearrange a given array or list of elements according to a comparison operator on the elements",
-      imgUrl: projImg1,
+      description: "The N Queen is the problem of placing N chess queens on an N×N chessboard so that no two queens attack each other. ",
+      imgUrl: projImg4,
       urlLink: '/nqueen'
     },
   
