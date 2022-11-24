@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Cells from "./cells";
 import Menu from "./menu";
 import { useState,useEffect} from 'react';
+import {BsFillArrowLeftCircleFill} from "react-icons/bs"
+import { Link } from "react-router-dom";
 
 function Queen() {
     const [board, setBoard] = useState([]);
@@ -81,6 +83,8 @@ function Queen() {
 
         return (
             <div>
+                <h1 className="title" style={{color: 'black'}}> <Link to="/"><BsFillArrowLeftCircleFill /></Link> N - Queen Problem</h1>
+
                 <Menu
                     onSpeedChange={handleSpeedChange}
                     onCountChange={handleQueenChange}

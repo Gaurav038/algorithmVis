@@ -2,29 +2,23 @@ import React, {Component} from 'react';
 import './style.css'
 import queen from './queen.png';
 
-class Cell extends Component {
-    render() {
-        return (
-            <div className={this.getClassName()} style={this.getStyled()}>
-                { this.props.cell.isPresent && <img src={queen} height='100px' style={{padding:"25px"}}/> }
-            </div>
-        );
-    }
-    getClassName = ()=>{
-        if(this.props.cell.isAttacked){
+function Cell(props) {
+
+    const getClassName = ()=>{
+        if(props.cell.isAttacked){
             return "boardCell attacked";
-        } else if(this.props.cell.isCurrent){
+        } else if(props.cell.isCurrent){
             return "boardCell current";
-        }else if(this.props.cell.isPresent){
+        }else if(props.cell.isPresent){
             return "boardCell present";
-        }else if(this.props.cell.isChecked){
+        }else if(props.cell.isChecked){
             return "boardCell checked";
         } else{
             return "boardCell";
         }
     }
-    getStyled = () =>{
-        if( (this.props.cell.row+this.props.cell.col)%2 === 0 ){
+    const getStyled = () =>{
+        if( (props.cell.row+props.cell.col)%2 === 0 ){
             return {
                 backgroundColor:"white"
             }
@@ -34,6 +28,12 @@ class Cell extends Component {
             }
         }
     }
+        return (
+            <div className={getClassName()} style={getStyled()}>
+                { props.cell.isPresent && <img src={queen} height='100px' style={{padding:"25px"}}/> }
+            </div>
+        );
+   
 }
 
 export default Cell;

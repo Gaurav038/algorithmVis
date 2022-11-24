@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Cell from "./cell";
 import './style.css';
-class Cells extends Component {
-    render() {
+
+function Cells(props) {
         return (
             <div className='booard m-5 queenBoard' >
-                {this.props.board.map( (row,rowidx)=>{
+                {props.board.map( (row,rowidx)=>{
                     return(
                         <div key={rowidx}>
                             {row.map( (cell,cellidx)=>{
@@ -20,7 +20,6 @@ class Cells extends Component {
                 } )}
             </div>
         );
-    }
 }
 
 export default Cells;

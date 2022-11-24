@@ -1,17 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 import DiscreteSlider from "./slider";
 
 
 
-class Menu extends Component {
-    render() {
+function Menu (props){
+
+    const isClickable = () =>{
+        if(props.disable ){
+            return {cursor: "not-allowed"};
+        } else{
+            return {};
+        }
+    }
         return (
             <nav className="nav alert-dark">
                 <button
                     className='btn btn-secondary m-2'
-                    onClick={this.props.onClear}
-                    disabled={this.props.disable}
-                    style={this.isClickable()}
+                    onClick={props.onClear}
+                    disabled={props.disable}
+                    style={isClickable()}
                 >
                     Clear Board
                 </button>
@@ -22,8 +29,8 @@ class Menu extends Component {
                     max={8}
                     step={1}
                     title="Grid size"
-                    onCountChange={this.props.onCountChange}
-                    disable={this.props.disable}
+                    onCountChange={props.onCountChange}
+                    disable={props.disable}
                 />
                 <DiscreteSlider
                     default={50}
@@ -31,28 +38,21 @@ class Menu extends Component {
                     max={100}
                     step={1}
                     title="Speed"
-                    onCountChange={this.props.onSpeedChange}
+                    onCountChange={props.onSpeedChange}
                 />
 
                 <button
                     className='btn btn-warning btn-lg '
-                    onClick={this.props.onViusalize}
-                    disabled={this.props.disable}
-                    style={this.isClickable()}
+                    onClick={props.onViusalize}
+                    disabled={props.disable}
+                    style={isClickable()}
                 >
                     Visualize
                 </button>
 
             </nav>
         );
-    }
-    isClickable = () =>{
-        if( this.props.disable ){
-            return {cursor: "not-allowed"};
-        } else{
-            return {};
-        }
-    }
+   
 }
 
 
