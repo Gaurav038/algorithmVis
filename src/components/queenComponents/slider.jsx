@@ -5,7 +5,9 @@ import Slider from '@material-ui/core/Slider';
 
 const useStyles = makeStyles({
     root: {
-        width: 200,
+        width: 250,
+        marginLeft: 17,
+        marginRight: 17
     },
 });
 
@@ -36,7 +38,6 @@ export default function DiscreteSlider(props) {
                // marks={props.marks}
                 min={props.min}
                 max={props.max}
-                valueLabelDisplay="on"
                 disabled={props.disable}
             />
             <Typography id="discrete-slider" gutterBottom>

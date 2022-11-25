@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import DiscreteSlider from "./slider";
-import SimpleSelect from "./simpleSelect";
 
 function Menu(props){
 
@@ -12,12 +11,8 @@ function Menu(props){
         }
     }
         return (
-            <nav className="nav alert-dark">
+            <nav className="nav alert-dark justify-content-center">
                 <button className="btn btn-primary btn-lg m-2" onClick={props.onRefresh} disabled={props.isDisabled} style={isClickable()}>Refresh</button>
-                <SimpleSelect
-                    pos={0}
-                    onAlgoChanged={props.setAlgo}
-                />
                 <DiscreteSlider
                     onChange={props.onChangeSpeed}
                     title="speed"

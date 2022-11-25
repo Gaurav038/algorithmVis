@@ -4,8 +4,7 @@ import projImg1 from "../../assets/img/projImg1.png";
 import projImg2 from "../../assets/img/projImg2.png";
 import projImg3 from "../../assets/img/projImg3.png";
 import projImg4 from "../../assets/img/board.png";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+// import 'animate.css';
 
 export const Projects = () => {
 
@@ -42,12 +41,9 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
+
                 <h2 style={{color: 'white'}} >Algorithm Visualizer</h2>
                 <p>Algorithm Visualizer is an interactive online platform that Visualising algorithms through animation</p>
-                  <div id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <div eventKey="first">
                       <Row>
                         {
@@ -62,9 +58,7 @@ export const Projects = () => {
                         }
                       </Row>
                     </div>
-                  </div>
-              </div>}
-            </TrackVisibility>
+  
           </Col>
         </Row>
       </Container>
