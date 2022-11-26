@@ -64,9 +64,11 @@ function Visualize() {
 
   // select and run the corresponding algorithm
   const start = async () => {
+    console.log("11111111111")
     lock(true);
     let moves = await getMoves(algorithm);
     await visualizeMoves(moves);
+    console.log("22222222")
     await done();
     lock(false);
   };

@@ -34,6 +34,12 @@ I wanted to improve my skills with React.js, JavaScript, CSS and also learn sort
 - Merge sort
 - Quick sort
 
+- Sieve of Eratosthenes
+
+- N Queen Backtracking
+
+- Binary Search
+
 
 
 
