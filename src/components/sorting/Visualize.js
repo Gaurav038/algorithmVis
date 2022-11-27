@@ -64,11 +64,9 @@ function Visualize() {
 
   // select and run the corresponding algorithm
   const start = async () => {
-    console.log("11111111111")
     lock(true);
     let moves = await getMoves(algorithm);
     await visualizeMoves(moves);
-    console.log("22222222")
     await done();
     lock(false);
   };
@@ -97,7 +95,7 @@ function Visualize() {
     }
     return moves;
   };
-
+  
   // for visualizing obtained moves
   const visualizeMoves = async (moves) => {
     if (moves.length === 0) {
@@ -111,8 +109,9 @@ function Visualize() {
     }
   };
 
-  // for visualizing range based sorting algorithms
+  // for visualizing range based sorting algorithms -----(only MERGE SORT)------
   const visualizeMovesInRange = async (Moves) => {
+
     let prevRange = [];
     while (Moves.length > 0 && Moves[0].length === 4) {
       // change range only when required to avoid blinking
@@ -192,20 +191,12 @@ function Visualize() {
     await updateElementClass(indexes, DONE);
   };
 
-  // For responsive navbar
-  const response = () => {
-    let Navbar = document.querySelector(".navbar");
-    if (Navbar.className === "navbar") Navbar.className += " responsive";
-    else Navbar.className = "navbar";
-  };
-
   return (
     <div className="visualize">
       <h1 className="title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Sorting Algorithms</h1>
 
       <Navbar
         start={start}
-        response={response}
         newList={generateList}
         onChange={onChange}
       />

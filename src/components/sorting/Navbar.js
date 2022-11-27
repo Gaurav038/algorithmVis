@@ -20,12 +20,6 @@ export default function Navbar(props) {
   ]);
   const [speeds, setspeeds] = useState([0.5, 0.75, 1.0, 2.0, 4.0]);
 
-  // prevent the default link behaviour for navbar
-  // hide/display button
-  const handleClick = (e) => {
-    e.preventDefault();
-    props.response();
-  };
 
   return (
     <div className="navbar" id="navbar" style={{justifyContent: 'center'}}>
@@ -38,9 +32,6 @@ export default function Navbar(props) {
       <button id="start" onClick={() => props.start()}>
         Start
       </button>
-      <a className="icon" onClick={(e) => handleClick(e)} href="/">
-        <i className="fa fa-bars"></i>
-      </a>
     </div>
   );
 }
