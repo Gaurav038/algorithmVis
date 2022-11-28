@@ -101,7 +101,7 @@ function Visualize() {
     if (moves.length === 0) {
       return;
     }
-    // if move length if 4, then we have to handle range part
+    // if move length if 4, then we have to handle range part -----(only MERGE SORT)------
     if (moves[0].length === 4) {
       await visualizeMovesInRange(moves);
     } else {
