@@ -11,7 +11,7 @@ function Menu(props){
         }
     }
         return (
-            <nav className="nav alert-dark justify-content-center">
+            <nav className="nav alert-dark flex-nowrap justify-content-center">
                 <button className="btn btn-primary btn-lg m-2" onClick={props.onRefresh} disabled={props.isDisabled} style={isClickable()}>Refresh</button>
                 <DiscreteSlider
                     onChange={props.onChangeSpeed}

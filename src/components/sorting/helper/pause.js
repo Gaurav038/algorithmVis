@@ -6,4 +6,5 @@ const pause = async(speed) => {
     });
 }
 
+
 export default pause;

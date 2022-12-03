@@ -50,7 +50,6 @@ function Visualize() {
       setSpeed(Number(value));
     } else if (option === SIZE && !running) {
       setSize(Number(value));
-      generateList();
     }
   };
 
@@ -129,7 +128,7 @@ function Visualize() {
   // for visualizing swapping based sorting algorithms
   const visualizeMovesBySwapping = async (Moves) => {
     while (Moves.length > 0) {
-      let currMove = Moves[0];
+      let currMove = Moves[0]; 
       // if container doesn't contains 3 elements then return
       if (currMove.length !== 3) {
         await visualizeMoves(Moves);
