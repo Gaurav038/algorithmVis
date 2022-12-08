@@ -5,10 +5,6 @@ import {CHANGE_VALUE} from '../helper/constants.js';
 export const mergeSort = async(array, length) => {
     let moves = [];
     await divide(array, moves, 0, length-1);
-    // console.log(moves)
-    for(let i = 0; i<moves.length; i++){
-        console.log(moves[i])
-    }
     return moves;
 };
 

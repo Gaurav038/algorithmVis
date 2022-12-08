@@ -1,13 +1,9 @@
 import React from 'react';
-import RangeSlider from "./doubleSlider";
 
 function Guess({yesButton, noButton, upper, lower, max}) {
 
-    console.log(upper, lower,"----------------")
-
         const getMid = () => {
             const mid = Math.floor( (upper+lower)/2);
-            console.log(mid,"----------------")
             return mid;
         }
 
@@ -16,17 +12,6 @@ function Guess({yesButton, noButton, upper, lower, max}) {
 
                 <p>
                 </p>
-                <div className="collapse" id="collapseExample">
-                    <div className="card card-body">
-                        <center style={{justifyContent:"center"}}>
-                            <RangeSlider
-                                upper={upper}
-                                lower={lower}
-                                max={max}
-                            />
-                        </center>
-                    </div>
-                </div>
 
                <h1>
                     Is you number greater than {getMid()}?

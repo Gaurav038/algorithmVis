@@ -19,11 +19,12 @@ const divider = async(moves, array, start, end) => {
 
 const partition = async(moves, array, start, end) => {
     let prevIndex = start - 1;
+    let pivot = array[end];
     for(let index = start ; index < end ; ++index) {
         if(index !== end) {
             moves.push([index, end, !SWAP]);
         }
-        if(array[index] < array[end]) {
+        if(array[index] < pivot) {
             ++prevIndex;
             await swap(array, index, prevIndex);
             moves.push([index, prevIndex, SWAP]);
