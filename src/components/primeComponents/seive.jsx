@@ -3,7 +3,6 @@ import Cells from "./cells";
 import { Link } from "react-router-dom";
 import {BsFillArrowLeftCircleFill} from "react-icons/bs";
 import Menu from "./menu";
-import {seive} from "./prime";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -64,17 +63,6 @@ function Seive() {
     const [cells, setCells] = useState([])
     const [isRunning, setisRunning] = useState(false)
     const [speed, setSpeed] = useState(500)
-    const [primes, setPrimes] = useState([])
-    const [maxPrime, setmaxPrime] = useState(0)
-    const [algo, setalgos] = useState(0)
-   
-    
-
-    const setAlgo = (pos, val) => {
-        if (pos === 0) {
-            setalgos(val)
-        }
-    }
 
     const changeSpeed = (speed) => {
         //console.log(typeof speed);
@@ -82,10 +70,8 @@ function Seive() {
     }
     const handleValueIncease = (value) => {
         setNumber(value);
-        if(algo === 0 ){
-            setCells(getCells(value));
-            setisRunning(false)
-        }
+        setCells(getCells(value));
+        setisRunning(false)
         // console.log(value);
     }
     const handleRefresh = () => {
@@ -95,28 +81,10 @@ function Seive() {
 
     const startAlgo = () =>{
         // console.log(this.state.algo);
-        if( algo === 0 ){
-            startSeive();
-        }else if( algo === 1 ){
-           startSpiral();
-        }
+        startSeive();
+        
     }
-    const startSpiral = async () =>{
-        let pprimes = seive(number*100);
-        let primes = [];
-        setPrimes([]);
-        setmaxPrime(pprimes[pprimes.length-1])
-        let mod = Math.ceil(number/10);
-        for(let i=0;i<pprimes.length;i++){
-            primes.push(pprimes[i]);
-
-            if( i%mod === 0 ){
-                setPrimes(primes);
-                await sleep(10);
-            }
-        }
-        console.log('done');
-    }
+   
     const startSeive = async () => {
         setisRunning(true)
         const prime = [];
@@ -164,7 +132,7 @@ function Seive() {
 
         return (
             <div>
-                <h1 className="black_title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Seive Algorithms</h1>
+                <h1 className="black_title"> <Link to="/"><BsFillArrowLeftCircleFill /></Link> Sieve Algorithms</h1>
 
                 <Menu
                     onChangeSpeed={changeSpeed}
@@ -172,14 +140,11 @@ function Seive() {
                     onVisualize = {startAlgo}
                     onRefresh = {handleRefresh}
                     isDisabled = {isRunning}
-                    setAlgo={setAlgo}
                 />
-                {algo === 0 &&
-                    <Cells
+                <Cells
                         num={number}
                         cells={cells}
-                    />
-                }
+                />
 
             </div>
         );
