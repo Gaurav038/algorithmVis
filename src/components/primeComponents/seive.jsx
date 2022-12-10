@@ -94,36 +94,30 @@ function Seive() {
         prime[0] = prime[1] = 0;
         let changedCells = cells;
         let prevCheck = -1;
-        let counter = 0;
+
         for( let i = 2; i<=number;i++){
             if( prime[i] === 1 ){
-             //   setTimeout(()=>{
-                    changedCells = getNewCellPrimeToggled(changedCells,i-1);
-                    setCells(changedCells)
-                //},counter*speed);
+                changedCells = getNewCellPrimeToggled(changedCells,i-1);
+                setCells(changedCells)
+
                 await sleep(speed);
-                counter++;
                 for(let j = i*i;j<=number;j+=i){
-                    //setTimeout(()=>{
                         if( prevCheck!=-1 ){
                             changedCells = getNewCellVisitingToggled(changedCells,prevCheck);
                         }
                         prevCheck = j-1;
-                        changedCells = getNewCellCheckToggled(changedCells,j-1);
+                        changedCells = getNewCellCheckToggled(changedCells,prevCheck);
                         changedCells = getNewCellVisitingToggled(changedCells,prevCheck);
                         setCells(changedCells)
-                  //  },counter*speed);
+                        
                     await sleep(speed);
-                    counter++;
                     prime[j] = 0;
                 }
             }
         }
-      //  setTimeout(()=>{
         changedCells = getNewCellVisitingToggled(changedCells,prevCheck);
         setCells(changedCells)
         setisRunning(false)
-       // },counter*speed);
     }
         useEffect(() => {
             const cells = getCells(number);

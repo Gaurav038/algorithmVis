@@ -6,10 +6,10 @@ function Cells(props){
 
         return (
             <div className="Cells">
-                {props.cells.map( (cell,cellidx)=>{
+                {props.cells.map( (cell,indx)=>{
                     return (
                         <Cell
-                            key={cellidx}
+                            key={indx}
                             cell={cell}
                         />
                     );

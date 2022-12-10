@@ -21,27 +21,13 @@
 }
 @keyframes isPrime {
     0% {
-        transform: rotate(90deg);
         background-color: rgba(0, 0, 66, 0.75);
-        border-radius: 100%;
     }
 
     50% {
         background-color: rgba(17, 104, 217, 0.75);
-        transform: scale(1.5);
+        transform: scale(1.1);
 
-    }
-
-    75% {
-        background-color: rgba(0, 217, 159, 0.75);
-        transform: rotate(270deg);
-
-    }
-
-    100% {
-
-        background-color: rgba(0, 190, 218, 0.75);
-        transform: rotate(360deg);
     }
 }
 .cell-check{
@@ -54,6 +40,6 @@
 }
 @keyframes isVisiting {
     50%{
-        transform: scale(1.5);
+        transform: scale(1.3);
     }
 }
