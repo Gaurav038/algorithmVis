@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Cells from "./cells";
 import Menu from "./menu";
 import { useState,useEffect} from 'react';
@@ -28,10 +28,7 @@ function Queen() {
         const board = getBoard(number);
         setBoard(board);
     }
-    const handleTurnOff = () => {
-        const newBoard = turnOffAttack(board, number);
-        setBoard(newBoard);
-    }
+   
     const startAlgo = async ()=>{
         setisRunning(true)
         const newBoard = board.slice();
@@ -40,35 +37,29 @@ function Queen() {
         setBoard(newBoard2);
         setisRunning(false);
     }
-    const queensAlgo =  async (board,col) => {
+    const queensAlgo =  async (board,row) => {
 
-        if( col>=number ){
+        if( row>=number ){
             return true;
         }
 
         let newBoard = board.slice();
-        for( let i = 0; i < number;i++ ){
+        for( let col = 0; col < number;col++ ){
 
-
-            newBoard = turnOffAttack(newBoard, number);
-            const result = getChecked(newBoard,i,col, number);
+            // newBoard = turnOffAttack(newBoard, number);
+            const result = getChecked(newBoard,row,col, number);
             newBoard = result[0];
 
             setBoard(newBoard);
             await sleep(speed);
             if( result[1] ){
-                const res = await queensAlgo(newBoard,col+1)
+                const res = await queensAlgo(newBoard,row+1)
                 if( res === true){
                     return true;
                 }
-                newBoard[i][col] = {...newBoard[i][col],isPresent:true,isCurrent:true};
-                setBoard(newBoard);
-                await sleep(speed);
-                newBoard[i][col] = {...newBoard[i][col],isPresent:false,isCurrent:false};
-                setBoard(newBoard);
-
             }
-            newBoard[i][col] = {...newBoard[i][col],isPresent:false,isCurrent:false};
+            // ---backtracking here-----------
+            newBoard[row][col] = {...newBoard[row][col],isPresent:false,isCurrent:false};
             newBoard = turnOffAttack(newBoard, number);
             setBoard(newBoard);
             await sleep(speed);
@@ -120,16 +111,8 @@ const turnOffAttack = (board,N) =>{
 const getChecked = (board,row,col,N) =>{
     const newBoard = board.slice();
     let pos = true;
+  
     // same col
-    for( let i = 0;i < N;i++ ){
-        if( newBoard[row][i].isPresent ){
-            newBoard[row][i] = {...newBoard[row][i],isAttacked:true};
-            pos = false;
-        } else{
-            newBoard[row][i] = {...newBoard[row][i],isChecked:true};
-        }
-    }
-    // same row
     for( let i = 0;i < N;i++ ){
         if( newBoard[i][col].isPresent ){
             newBoard[i][col] = {...newBoard[i][col],isAttacked:true};
@@ -138,6 +121,8 @@ const getChecked = (board,row,col,N) =>{
             newBoard[i][col] = {...newBoard[i][col],isChecked:true};
         }
     }
+
+    // left side in top Diagonal
     for( let i = row,j = col; i >= 0 && j >= 0; i--, j--){
         if( newBoard[i][j].isPresent ){
             newBoard[i][j] = {...newBoard[i][j],isAttacked:true};
@@ -146,22 +131,8 @@ const getChecked = (board,row,col,N) =>{
             newBoard[i][j] = {...newBoard[i][j],isChecked:true};
         }
     }
-    for( let i = row,j = col; i <N && j >= 0; i++, j--){
-        if( newBoard[i][j].isPresent ){
-            newBoard[i][j] = {...newBoard[i][j],isAttacked:true};
-            pos = false;
-        } else{
-            newBoard[i][j] = {...newBoard[i][j],isChecked:true};
-        }
-    }
-    for( let i = row,j = col; i <N && j < N; i++, j++){
-        if( newBoard[i][j].isPresent ){
-            newBoard[i][j] = {...newBoard[i][j],isAttacked:true};
-            pos = false;
-        } else{
-            newBoard[i][j] = {...newBoard[i][j],isChecked:true};
-        }
-    }
+  
+    // right side in Top Diagonal
     for( let i = row,j = col; i>=0 && j < N; i--, j++){
         if( newBoard[i][j].isPresent ){
             newBoard[i][j] = {...newBoard[i][j],isAttacked:true};
@@ -171,7 +142,7 @@ const getChecked = (board,row,col,N) =>{
         }
     }
 
-    newBoard[row][col] = {...newBoard[row][col],isPresent:true,isCurrent:true};
+    newBoard[row][col] = {...newBoard[row][col],isPresent:true};
 
     return [newBoard,pos];
 }
