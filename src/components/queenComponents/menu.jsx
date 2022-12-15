@@ -39,6 +39,7 @@ function Menu (props){
                     step={1}
                     title="Speed"
                     onCountChange={props.onSpeedChange}
+                    disable={props.disable}
                 />
 
                 <button

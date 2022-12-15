@@ -30,7 +30,7 @@ function Cell(props) {
     }
         return (
             <div className={getClassName()} style={getStyled()}>
-                { props.cell.isPresent && <img src={queen} height='100px' style={{padding:"25px"}}/> }
+                { props.cell.isPresent && <img src={queen} height='auto' style={{padding:"1.4rem"}}/> }
             </div>
         );
    

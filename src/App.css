@@ -70,7 +70,7 @@ p.danger {
 .title {
 	color: white;
 	text-align: center;
-	font-size: 2em;
+	font-size: 2rem;
 	margin-top: 1em;
 	margin-bottom: 1.5em;
 }
@@ -78,7 +78,7 @@ p.danger {
 .black_title {
 	color: rgb(9, 7, 7);
 	text-align: center;
-	font-size: 2em;
+	font-size: 2rem;
 	margin-top: 1em;
 	margin-bottom: 1.5em;
 }
@@ -91,13 +91,13 @@ p.danger {
   background-color: black;
 }
 .project h2 {
-	font-size: 45px;
+	font-size: 3rem;
 	font-weight: 700;
   text-align: center;
 }
 .project p {
   color: #B8B8B8;
-  font-size: 18px;
+  font-size: 1.4rem;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   margin: 14px auto 30px auto;
@@ -139,7 +139,7 @@ p.danger {
   opacity: 1;
 }
 .proj-txtx h4 {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
@@ -147,7 +147,7 @@ p.danger {
 .proj-txtx span {
   font-style: italic;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 1rem;
   letter-spacing: 0.8px;
 }
 .background-image-right {
@@ -195,7 +195,7 @@ p.danger {
 .navbar {
   top: 0;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 1rem;
   min-height: 60px;
   text-align: center;
   background-color: #555252;
@@ -247,11 +247,37 @@ button:hover {
 /* NAVBAR ENDS */
 
 
-@media (max-width:800px) {
+@media (max-width:1000px) {
+
+  html {
+    font-size: 13px;
+  }
+
 	.navbar #menu {
     margin-top: 2px;
-    width: 80px;
+    width: 90px;
     height: 25px;
     outline: none;
+  }
+  .visualize button {
+    width: 80px;
+  }
+
+}
+
+@media (max-width:800px) {
+
+  html {
+    font-size: 10px;
+  }
+
+	.navbar #menu {
+    margin-top: 2px;
+    width: 70px;
+    height: 25px;
+    outline: none;
+  }
+  .visualize button {
+    width: 60px;
   }
 }

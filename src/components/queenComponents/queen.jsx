@@ -11,10 +11,6 @@ function Queen() {
     const [speed, setSpeed] = useState(490);
     const [isRunning, setisRunning] = useState(false);
 
-    const handleStop =() =>{
-        setisRunning(false)
-    }
-
     const handleSpeedChange = (val)=>{
         const speed = (100-val)*10;
         setSpeed(speed);
@@ -46,7 +42,7 @@ function Queen() {
         let newBoard = board.slice();
         for( let col = 0; col < number;col++ ){
 
-            // newBoard = turnOffAttack(newBoard, number);
+            newBoard = turnOffAttack(newBoard, number);
             const result = getChecked(newBoard,row,col, number);
             newBoard = result[0];
 
@@ -82,7 +78,6 @@ function Queen() {
                     onViusalize={startAlgo}
                     disable={isRunning}
                     onClear={handleClear}
-                    onStop={handleStop}
                 />
                 <div style={{textAlign:"Center"}}>
                     <Cells
@@ -142,7 +137,7 @@ const getChecked = (board,row,col,N) =>{
         }
     }
 
-    newBoard[row][col] = {...newBoard[row][col],isPresent:true};
+    newBoard[row][col] = {...newBoard[row][col],isPresent:true,isCurrent:true};
 
     return [newBoard,pos];
 }
